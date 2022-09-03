@@ -12,12 +12,9 @@ public:
 	Contact(void);
 	~Contact(void);
 
-//	const std::string get_first_name(void);
-//	std::string get_last_name(void);
-//	std::string get_nickname(void);
-//	std::string get_number(void);
-//	std::string get_darkest_secret(void);
-	void get_last_name(void);
+	void set_all(void);
+	void display_c(int i);
+	std::string get_v(int i);
 };
 
 

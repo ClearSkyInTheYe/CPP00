@@ -1,15 +1,26 @@
 #include "Contact.hpp"
+#include "Book.hpp"
 
 int main(void)
 {
 	Contact c;
+	Book	b;
 	std::string cmd;
 
 	while (1)
 	{
-		c.get_last_name();
-//		std::cout << "Please, enter command: ";
-//		std::getline(std::cin, cmd);
-		std::cout << cmd << std::endl;
+		std::cout << "Please, enter command: ";
+		std::getline(std::cin, cmd);
+		if (!cmd.compare("ADD"))
+			b.set_c();
+		else if (!cmd.compare("SEARCH"))
+		{
+			b.display();
+			b.select_search();
+		}
+		else if (!cmd.compare("EXIT"))
+			break ;
+		else
+			std::cout << "Availible commands are: ADD, SEARCH and EXIT\n";
 	}
 }
