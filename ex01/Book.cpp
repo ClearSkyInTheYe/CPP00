@@ -13,17 +13,18 @@ Book::~Book()
 
 void Book::set_c()
 {
-	int x = 0;
+	static int x;
 
-	if (this->_i == 8)
+	this->c[x].set_all();
+	x++;
+	if (x == 8)
 	{
-		x = 1;
-		this->_i = 0;
+		x = 0;
+		this->_i = 8;
+		return ;
 	}
-	this->c[this->_i].set_all();
-	this->_i++;
-	if (x == 1)
-		this->_i = 7;
+	if (this->_i != 8)
+		this->_i++;
 }
 
 void Book::display()
@@ -66,9 +67,9 @@ void Book::select_search()
 
 	std::cout << "Please, enter index number:";
 	std::getline(std::cin, n);
-	if (isn(n))
+	if (n.length() == 0 || isn(n))
 	{
-		std::cout << "AAAThe number should be from 1 to " << this->_i << "\n";
+		std::cout << "The number should be from 1 to " << this->_i << "\n";
 		return ;
 	}
 	if (isn(n))
