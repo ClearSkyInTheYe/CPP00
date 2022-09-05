@@ -2,13 +2,11 @@
 
 Contact::Contact( void )
 {
-	// std::cout << "Contact constructed" << std::endl;
 	return;
 }
 
 Contact::~Contact( void )
 {
-	// std::cout << "Contact dectructor called" << std::endl;
 	return;
 }
 
@@ -31,22 +29,23 @@ void Contact:: display_c(int i)
 {
 	int x = 0;
 
-	std::cout << "|" << i;
+	std::cout << "|";
 	while (x < 9)
 	{
 		std::cout << " ";
 		x++;
 	}
+	std::cout << i;
 	std::cout << "|";
 	if (this->_first_name.length() <= 10)
 	{
 		x = this->_first_name.length();
-		std::cout << this->_first_name;
 		while (x < 10)
 		{
 			std::cout << " ";
 			x++;
 		}
+		std::cout << this->_first_name;
 		std::cout << "|";
 	}
 	else
@@ -54,12 +53,12 @@ void Contact:: display_c(int i)
 	if (this->_last_name.length() <= 10)
 	{
 		x = this->_last_name.length();
-		std::cout << this->_last_name;
 		while (x < 10)
 		{
 			std::cout << " ";
 			x++;
 		}
+		std::cout << this->_last_name;
 		std::cout << "|";
 	}
 	else
@@ -67,12 +66,12 @@ void Contact:: display_c(int i)
 	if (this->_nickname.length() <= 10)
 	{
 		x = this->_nickname.length();
-		std::cout << this->_nickname;
 		while (x < 10)
 		{
 			std::cout << " ";
 			x++;
 		}
+		std::cout << this->_nickname;
 		std::cout << "|";
 	}
 	else

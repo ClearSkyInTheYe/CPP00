@@ -15,14 +15,13 @@ void Book::set_c()
 {
 	static int x;
 
-	this->c[x].set_all();
-	x++;
 	if (x == 8)
 	{
 		x = 0;
 		this->_i = 8;
-		return ;
 	}
+	this->c[x].set_all();
+	x++;
 	if (this->_i != 8)
 		this->_i++;
 }
@@ -64,10 +63,21 @@ void Book::select_search()
 {
 	std::string n;
 	int			x;
+	int		a = 0;
 
 	std::cout << "Please, enter index number:";
 	std::getline(std::cin, n);
-	if (n.length() == 0 || isn(n))
+	if (n.length() == 0)
+	{
+		while (a < this->_i)
+		{
+			this->c[a].~Contact();
+			a++;
+		}
+		this->~Book();
+		exit(1);
+	}
+	if (isn(n))
 	{
 		std::cout << "The number should be from 1 to " << this->_i << "\n";
 		return ;

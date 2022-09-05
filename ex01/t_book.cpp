@@ -11,6 +11,8 @@ int main(void)
 	{
 		std::cout << "Please, enter command: ";
 		std::getline(std::cin, cmd);
+		if (cmd.length() == 0)
+			break ;
 		if (!cmd.compare("ADD"))
 			b.set_c();
 		else if (!cmd.compare("SEARCH"))
