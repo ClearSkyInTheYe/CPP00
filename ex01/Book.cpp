@@ -24,6 +24,7 @@ void Book::set_c()
 	x++;
 	if (this->_i != 8)
 		this->_i++;
+	return ;
 }
 
 void Book::display()
