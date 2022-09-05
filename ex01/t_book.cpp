@@ -11,9 +11,9 @@ int main(void)
 	{
 		std::cout << "Please, enter command: ";
 		std::getline(std::cin, cmd);
-		if (cmd.length() == 0)
+		if (std::cin.eof())
 			break ;
-		if (!cmd.compare("ADD"))
+		else if (!cmd.compare("ADD"))
 			b.set_c();
 		else if (!cmd.compare("SEARCH"))
 		{
@@ -23,6 +23,6 @@ int main(void)
 		else if (!cmd.compare("EXIT"))
 			break ;
 		else
-			std::cout << "Availible commands are: ADD, SEARCH and EXIT\n";
+			std::cout << "Available commands are: ADD, SEARCH and EXIT\n";
 	}
 }

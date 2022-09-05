@@ -24,7 +24,6 @@ void Book::set_c()
 	x++;
 	if (this->_i != 8)
 		this->_i++;
-	return ;
 }
 
 void Book::display()
@@ -64,11 +63,11 @@ void Book::select_search()
 {
 	std::string n;
 	int			x;
-	int		a = 0;
+	int 	a = 0;
 
 	std::cout << "Please, enter index number:";
 	std::getline(std::cin, n);
-	if (n.length() == 0)
+	if (std::cin.eof())
 	{
 		while (a < this->_i)
 		{
@@ -77,6 +76,11 @@ void Book::select_search()
 		}
 		this->~Book();
 		exit(1);
+	}
+	if (n[0] == 0)
+	{
+		std::cout << "The number should be from 1 to " << this->_i << "\n";
+		return ;
 	}
 	if (isn(n))
 	{
